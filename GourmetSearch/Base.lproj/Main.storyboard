@@ -96,10 +96,10 @@
             </objects>
             <point key="canvasLocation" x="-1150" y="757"/>
         </scene>
-        <!--View Controller-->
+        <!--Shop Detail View Controller-->
         <scene sceneID="anK-P3-eNu">
             <objects>
-                <viewController id="37D-4o-a37" sceneMemberID="viewController">
+                <viewController id="37D-4o-a37" customClass="ShopDetailViewController" customModule="GourmetSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u74-fB-Xce"/>
                         <viewControllerLayoutGuide type="bottom" id="bGh-1t-S93"/>
@@ -114,13 +114,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qUC-QI-6Md">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="641"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mr3-Hd-gfE">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mr3-Hd-gfE" userLabel="Photo">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="Oii-Q2-r3r"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="店舗名" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOV-At-nx4">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOV-At-nx4">
                                                 <rect key="frame" x="8" y="210" width="327" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="arO-2m-1Bd"/>
@@ -132,6 +132,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTv-5Z-X7Q" userLabel="電話番号ボタンコンテナ">
                                                 <rect key="frame" x="0.0" y="239" width="343" height="44"/>
                                                 <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fP-fS-RNd" userLabel="電話番号ボタン">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                                        <state key="normal" backgroundImage="blank"/>
+                                                        <connections>
+                                                            <action selector="telTapped:" destination="37D-4o-a37" eventType="touchUpInside" id="62y-69-VVb"/>
+                                                        </connections>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="電話番号" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48P-bF-brF">
                                                         <rect key="frame" x="8" y="0.0" width="80" height="44"/>
                                                         <constraints>
@@ -141,41 +148,72 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfz-j3-X4T">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfz-j3-X4T" userLabel="電話番号(本体)">
                                                         <rect key="frame" x="96" y="0.0" width="239" height="44"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CmK-QL-Cv6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="8" height="44"/>
-                                                        <state key="normal" backgroundImage="blank"/>
-                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="1Sp-D0-Epr"/>
                                                     <constraint firstItem="48P-bF-brF" firstAttribute="leading" secondItem="mTv-5Z-X7Q" secondAttribute="leading" constant="8" id="1rR-2H-6at"/>
-                                                    <constraint firstItem="48P-bF-brF" firstAttribute="leading" secondItem="CmK-QL-Cv6" secondAttribute="trailing" id="5uw-hL-wLi"/>
+                                                    <constraint firstItem="3fP-fS-RNd" firstAttribute="height" secondItem="mTv-5Z-X7Q" secondAttribute="height" id="Y8B-BQ-T5V"/>
                                                     <constraint firstItem="jfz-j3-X4T" firstAttribute="leading" secondItem="48P-bF-brF" secondAttribute="trailing" constant="8" id="Yww-ct-3tZ"/>
-                                                    <constraint firstItem="CmK-QL-Cv6" firstAttribute="height" secondItem="mTv-5Z-X7Q" secondAttribute="height" id="aTD-hG-jh4"/>
                                                     <constraint firstAttribute="trailing" secondItem="jfz-j3-X4T" secondAttribute="trailing" constant="8" id="gOT-fG-yK8"/>
-                                                    <constraint firstItem="CmK-QL-Cv6" firstAttribute="top" secondItem="mTv-5Z-X7Q" secondAttribute="top" id="mbl-HG-fkP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3fP-fS-RNd" secondAttribute="trailing" id="hYy-ce-T9n"/>
+                                                    <constraint firstItem="3fP-fS-RNd" firstAttribute="top" secondItem="mTv-5Z-X7Q" secondAttribute="top" id="i2y-sl-ODf"/>
                                                     <constraint firstItem="jfz-j3-X4T" firstAttribute="height" secondItem="mTv-5Z-X7Q" secondAttribute="height" id="q69-41-bqg"/>
+                                                    <constraint firstItem="3fP-fS-RNd" firstAttribute="leading" secondItem="mTv-5Z-X7Q" secondAttribute="leading" id="qYS-0t-UqX"/>
                                                     <constraint firstItem="48P-bF-brF" firstAttribute="height" secondItem="mTv-5Z-X7Q" secondAttribute="height" id="vFK-2T-12U"/>
                                                     <constraint firstItem="48P-bF-brF" firstAttribute="centerY" secondItem="mTv-5Z-X7Q" secondAttribute="centerY" id="wwK-p2-H6q"/>
-                                                    <constraint firstItem="CmK-QL-Cv6" firstAttribute="leading" secondItem="mTv-5Z-X7Q" secondAttribute="leading" id="xxH-Of-tZC"/>
                                                     <constraint firstItem="jfz-j3-X4T" firstAttribute="centerY" secondItem="mTv-5Z-X7Q" secondAttribute="centerY" id="zgV-rx-3eO"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0h-xO-Apb" userLabel="住所ボタンコンテナ">
                                                 <rect key="frame" x="0.0" y="283" width="343" height="44"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vap-8G-Xna" userLabel="住所ボタン">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                                        <state key="normal" backgroundImage="blank"/>
+                                                        <connections>
+                                                            <action selector="addressTapped:" destination="37D-4o-a37" eventType="touchUpInside" id="gRD-cr-Lxf"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="住所" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oR0-fh-SeE" userLabel="住所">
+                                                        <rect key="frame" x="8" y="0.0" width="80" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="eYy-5g-Gh1"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Zk-Ml-hyO" userLabel="住所(本体)">
+                                                        <rect key="frame" x="96" y="0.0" width="239" height="44"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="vap-8G-Xna" secondAttribute="trailing" id="8wa-M1-h4t"/>
+                                                    <constraint firstAttribute="trailing" secondItem="7Zk-Ml-hyO" secondAttribute="trailing" constant="8" id="AQf-Cx-4RD"/>
                                                     <constraint firstAttribute="height" constant="44" id="BJL-uz-oLC"/>
+                                                    <constraint firstItem="vap-8G-Xna" firstAttribute="top" secondItem="M0h-xO-Apb" secondAttribute="top" id="Ld5-bX-U0d"/>
+                                                    <constraint firstItem="oR0-fh-SeE" firstAttribute="height" secondItem="M0h-xO-Apb" secondAttribute="height" id="Tm6-RQ-WoE"/>
+                                                    <constraint firstItem="oR0-fh-SeE" firstAttribute="centerY" secondItem="M0h-xO-Apb" secondAttribute="centerY" id="Two-7v-CTt"/>
+                                                    <constraint firstItem="7Zk-Ml-hyO" firstAttribute="height" secondItem="M0h-xO-Apb" secondAttribute="height" id="VfJ-ef-Rkh"/>
+                                                    <constraint firstItem="vap-8G-Xna" firstAttribute="height" secondItem="M0h-xO-Apb" secondAttribute="height" id="j44-5P-KPs"/>
+                                                    <constraint firstItem="oR0-fh-SeE" firstAttribute="leading" secondItem="M0h-xO-Apb" secondAttribute="leading" constant="8" id="qc5-cB-6b3"/>
+                                                    <constraint firstItem="7Zk-Ml-hyO" firstAttribute="centerY" secondItem="M0h-xO-Apb" secondAttribute="centerY" id="r3T-v7-l7c"/>
+                                                    <constraint firstItem="7Zk-Ml-hyO" firstAttribute="leading" secondItem="oR0-fh-SeE" secondAttribute="trailing" constant="8" id="s6L-2n-CBz"/>
+                                                    <constraint firstItem="vap-8G-Xna" firstAttribute="leading" secondItem="M0h-xO-Apb" secondAttribute="leading" id="vkA-bd-0Lg"/>
                                                 </constraints>
                                             </view>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fL0-c0-XGs">
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fL0-c0-XGs" userLabel="Map">
                                                 <rect key="frame" x="0.0" y="347" width="343" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="k9j-Ev-AnE"/>
@@ -183,9 +221,41 @@
                                             </mapView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hv-fq-Gc8" userLabel="お気に入りコンテナ">
                                                 <rect key="frame" x="0.0" y="517" width="343" height="44"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdc-JU-hnQ" userLabel="お気に入りボタン">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                                        <state key="normal" backgroundImage="blank"/>
+                                                        <connections>
+                                                            <action selector="favoriteTapped:" destination="37D-4o-a37" eventType="touchUpInside" id="4vi-XV-0Gs"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-off" translatesAutoresizingMaskIntoConstraints="NO" id="TLf-eV-TDD" userLabel="お気に入りアイコン">
+                                                        <rect key="frame" x="8" y="6" width="32" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="2Ir-hU-Cxi"/>
+                                                            <constraint firstAttribute="width" constant="32" id="6EM-Nd-s29"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50C-Xm-sN8" userLabel="お気に入りラベル">
+                                                        <rect key="frame" x="48" y="0.5" width="287" height="44"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
+                                                    <constraint firstItem="tdc-JU-hnQ" firstAttribute="top" secondItem="1hv-fq-Gc8" secondAttribute="top" id="2NP-Is-QzA"/>
+                                                    <constraint firstItem="50C-Xm-sN8" firstAttribute="centerY" secondItem="1hv-fq-Gc8" secondAttribute="centerY" id="7Jb-Rb-X52"/>
+                                                    <constraint firstItem="tdc-JU-hnQ" firstAttribute="leading" secondItem="1hv-fq-Gc8" secondAttribute="leading" id="BQJ-Ky-EDz"/>
+                                                    <constraint firstItem="tdc-JU-hnQ" firstAttribute="height" secondItem="1hv-fq-Gc8" secondAttribute="height" id="No5-dO-PdT"/>
+                                                    <constraint firstItem="TLf-eV-TDD" firstAttribute="centerY" secondItem="1hv-fq-Gc8" secondAttribute="centerY" id="SOy-MZ-zXk"/>
+                                                    <constraint firstItem="TLf-eV-TDD" firstAttribute="leading" secondItem="1hv-fq-Gc8" secondAttribute="leading" constant="8" id="XTC-YE-2DW"/>
                                                     <constraint firstAttribute="height" constant="44" id="ics-In-pmZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="tdc-JU-hnQ" secondAttribute="trailing" id="lSa-JU-AQy"/>
+                                                    <constraint firstItem="50C-Xm-sN8" firstAttribute="height" secondItem="1hv-fq-Gc8" secondAttribute="height" id="nLh-3v-1ak"/>
+                                                    <constraint firstAttribute="trailing" secondItem="50C-Xm-sN8" secondAttribute="trailing" constant="8" id="uGp-bs-VAW"/>
+                                                    <constraint firstItem="50C-Xm-sN8" firstAttribute="leading" secondItem="TLf-eV-TDD" secondAttribute="trailing" constant="8" id="ytz-Br-GJl"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -230,10 +300,22 @@
                             <constraint firstItem="bGh-1t-S93" firstAttribute="top" secondItem="Djc-6n-bIY" secondAttribute="bottom" id="nFn-2B-Zk5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="address" destination="7Zk-Ml-hyO" id="dZH-NZ-cla"/>
+                        <outlet property="addressContainerHeight" destination="BJL-uz-oLC" id="SIc-7u-w3M"/>
+                        <outlet property="favoriteIcon" destination="TLf-eV-TDD" id="iTF-bl-pQM"/>
+                        <outlet property="favoriteLabel" destination="50C-Xm-sN8" id="Rzg-ra-ozB"/>
+                        <outlet property="map" destination="fL0-c0-XGs" id="VOp-Zh-HNY"/>
+                        <outlet property="name" destination="vOV-At-nx4" id="J2l-L1-oK3"/>
+                        <outlet property="nameHeight" destination="arO-2m-1Bd" id="a98-L3-3iR"/>
+                        <outlet property="photo" destination="Mr3-Hd-gfE" id="OmL-V3-uBF"/>
+                        <outlet property="scrollView" destination="Djc-6n-bIY" id="wLd-lw-SAC"/>
+                        <outlet property="tel" destination="jfz-j3-X4T" id="Zhl-f0-HDZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tlp-Rd-Yz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-786.39999999999998" y="1791.4542728635683"/>
+            <point key="canvasLocation" x="1686" y="757"/>
         </scene>
         <!--Shop List View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -349,6 +431,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="nGs-Mb-JbZ" id="Bbu-Ik-uVm"/>
+                        <segue destination="37D-4o-a37" kind="show" identifier="PushShopDetail" id="oQb-SW-IZY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -358,5 +441,6 @@
     </scenes>
     <resources>
         <image name="blank" width="1" height="1"/>
+        <image name="star-off" width="40" height="40"/>
     </resources>
 </document>
