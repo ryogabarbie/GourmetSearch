@@ -10,6 +10,8 @@
 		067C471C8317B45B86063BA5 /* Pods_GourmetSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 114BAF96791BCF7B97224D35 /* Pods_GourmetSearch.framework */; };
 		290208DF1EED32B5008EEA51 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290208DE1EED32B5008EEA51 /* ShopDetailViewController.swift */; };
 		290208E11EED4E33008EEA51 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290208E01EED4E33008EEA51 /* Favorite.swift */; };
+		290208E41EED99F0008EEA51 /* SearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290208E31EED99F0008EEA51 /* SearchNavigationController.swift */; };
+		290208E61EED9A0F008EEA51 /* FavoriteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290208E51EED9A0F008EEA51 /* FavoriteNavigationController.swift */; };
 		2948C0F11EE2A14E002D7BEF /* ShopListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948C0F01EE2A14E002D7BEF /* ShopListItemTableViewCell.swift */; };
 		2948C0F51EE2C173002D7BEF /* YahooLocalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948C0F41EE2C173002D7BEF /* YahooLocalSearch.swift */; };
 		294D13C81EE062EC0078C6C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294D13C71EE062EC0078C6C6 /* AppDelegate.swift */; };
@@ -26,6 +28,8 @@
 		21249DC6E05B8EBB902E0A7E /* Pods-GourmetSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GourmetSearch/Pods-GourmetSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		290208DE1EED32B5008EEA51 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		290208E01EED4E33008EEA51 /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		290208E31EED99F0008EEA51 /* SearchNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNavigationController.swift; sourceTree = "<group>"; };
+		290208E51EED9A0F008EEA51 /* FavoriteNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationController.swift; sourceTree = "<group>"; };
 		2948C0F01EE2A14E002D7BEF /* ShopListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopListItemTableViewCell.swift; sourceTree = "<group>"; };
 		2948C0F41EE2C173002D7BEF /* YahooLocalSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooLocalSearch.swift; sourceTree = "<group>"; };
 		294D13C41EE062EC0078C6C6 /* GourmetSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +64,15 @@
 				114BAF96791BCF7B97224D35 /* Pods_GourmetSearch.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		290208E21EED9959008EEA51 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				290208E31EED99F0008EEA51 /* SearchNavigationController.swift */,
+				290208E51EED9A0F008EEA51 /* FavoriteNavigationController.swift */,
+			);
+			name = Tabs;
 			sourceTree = "<group>";
 		};
 		2948C0F21EE2A15C002D7BEF /* ShopList */ = {
@@ -105,6 +118,7 @@
 		294D13C61EE062EC0078C6C6 /* GourmetSearch */ = {
 			isa = PBXGroup;
 			children = (
+				290208E21EED9959008EEA51 /* Tabs */,
 				2948C0F31EE2C142002D7BEF /* Common */,
 				2948C0F21EE2A15C002D7BEF /* ShopList */,
 				294D13C71EE062EC0078C6C6 /* AppDelegate.swift */,
@@ -256,7 +270,9 @@
 				2964DE141EE45E3C00A677F7 /* FreewordTableViewCell.swift in Sources */,
 				290208DF1EED32B5008EEA51 /* ShopDetailViewController.swift in Sources */,
 				294D13C81EE062EC0078C6C6 /* AppDelegate.swift in Sources */,
+				290208E61EED9A0F008EEA51 /* FavoriteNavigationController.swift in Sources */,
 				2964DE121EE45B4A00A677F7 /* SearchTopTableViewController.swift in Sources */,
+				290208E41EED99F0008EEA51 /* SearchNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
