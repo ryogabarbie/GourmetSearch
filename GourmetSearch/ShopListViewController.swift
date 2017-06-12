@@ -21,6 +21,10 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(ShopListViewController.onRefresh(_:)), for: .valueChanged)
         self.tableView.addSubview(refreshControl)
+        
+        if !(self.navigationController is FavoriteNavigationController) {
+            self.navigationItem.rightBarButtonItem = nil
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -113,6 +117,33 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
         performSegue(withIdentifier: "PushShopDetail", sender: indexPath)
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return self.navigationController is FavoriteNavigationController
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let gid = yls.shops[indexPath.row].gid else {
+                return
+            }
+            Favorite.remove(gid)
+            yls.shops.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return self.navigationController is FavoriteNavigationController
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        if sourceIndexPath == destinationIndexPath { return }
+        
+        let source = yls.shops[sourceIndexPath.row]
+        yls.shops.remove(at: sourceIndexPath.row)
+        yls.shops.insert(source, at: destinationIndexPath.row)
+        Favorite.move(sourceIndexPath.row, to: destinationIndexPath.row)
+    }
     
     // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -149,5 +180,17 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
     }
+    
+    // MARK: - IBAction
+    @IBAction func editButtonTapped(_ sender: UIBarButtonItem) {
+        if tableView.isEditing {
+            tableView.setEditing(false, animated: true)
+            sender.title = "編集"
+        } else {
+            tableView.setEditing(true, animated: true)
+            sender.title = "完了"
+        }
+    }
+    
 }
 
