@@ -21,6 +21,8 @@
 		294D13D21EE062EC0078C6C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 294D13D01EE062EC0078C6C6 /* LaunchScreen.storyboard */; };
 		2964DE121EE45B4A00A677F7 /* SearchTopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2964DE111EE45B4A00A677F7 /* SearchTopTableViewController.swift */; };
 		2964DE141EE45E3C00A677F7 /* FreewordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2964DE131EE45E3C00A677F7 /* FreewordTableViewCell.swift */; };
+		29CA3DDD1EF16CEF00FAE2E7 /* ShopMapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CA3DDC1EF16CEF00FAE2E7 /* ShopMapDetailViewController.swift */; };
+		29CA3DDF1EF1731300FAE2E7 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CA3DDE1EF1731300FAE2E7 /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		294D13DD1EE06EC80078C6C6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		2964DE111EE45B4A00A677F7 /* SearchTopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTopTableViewController.swift; sourceTree = "<group>"; };
 		2964DE131EE45E3C00A677F7 /* FreewordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreewordTableViewCell.swift; sourceTree = "<group>"; };
+		29CA3DDC1EF16CEF00FAE2E7 /* ShopMapDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopMapDetailViewController.swift; sourceTree = "<group>"; };
+		29CA3DDE1EF1731300FAE2E7 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		5DFA247E9551AABB97C359FB /* Pods-GourmetSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-GourmetSearch/Pods-GourmetSearch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +87,7 @@
 				2964DE111EE45B4A00A677F7 /* SearchTopTableViewController.swift */,
 				2964DE131EE45E3C00A677F7 /* FreewordTableViewCell.swift */,
 				290208DE1EED32B5008EEA51 /* ShopDetailViewController.swift */,
+				29CA3DDC1EF16CEF00FAE2E7 /* ShopMapDetailViewController.swift */,
 			);
 			name = ShopList;
 			sourceTree = "<group>";
@@ -92,6 +97,7 @@
 			children = (
 				2948C0F41EE2C173002D7BEF /* YahooLocalSearch.swift */,
 				290208E01EED4E33008EEA51 /* Favorite.swift */,
+				29CA3DDE1EF1731300FAE2E7 /* LocationService.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -263,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29CA3DDD1EF16CEF00FAE2E7 /* ShopMapDetailViewController.swift in Sources */,
 				2948C0F11EE2A14E002D7BEF /* ShopListItemTableViewCell.swift in Sources */,
 				290208E11EED4E33008EEA51 /* Favorite.swift in Sources */,
 				294D13CA1EE062EC0078C6C6 /* ShopListViewController.swift in Sources */,
@@ -272,6 +279,7 @@
 				294D13C81EE062EC0078C6C6 /* AppDelegate.swift in Sources */,
 				290208E61EED9A0F008EEA51 /* FavoriteNavigationController.swift in Sources */,
 				2964DE121EE45B4A00A677F7 /* SearchTopTableViewController.swift in Sources */,
+				29CA3DDF1EF1731300FAE2E7 /* LocationService.swift in Sources */,
 				290208E41EED99F0008EEA51 /* SearchNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

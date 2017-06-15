@@ -37,6 +37,19 @@ class ShopDetailViewController: UIViewController, UIScrollViewDelegate {
         name.text = shop.name
         tel.text = shop.tel
         address.text = shop.address
+        
+        if let lat = shop.lat {
+            if let lon = shop.lon {
+                let cllc = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                let mkcr = MKCoordinateRegionMakeWithDistance(cllc, 200, 200)
+                map.setRegion(mkcr, animated: false)
+                
+                let pin = MKPointAnnotation()
+                pin.coordinate = cllc
+                map.addAnnotation(pin)
+            }
+        }
+        
         updateFavoriteButton()
     }
     
@@ -64,6 +77,14 @@ class ShopDetailViewController: UIViewController, UIScrollViewDelegate {
         view.layoutIfNeeded()
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PushMapDetail" {
+            let vc = segue.destination as! ShopMapDetailViewController
+            vc.shop = shop
+        }
+    }
+    
     // MARK: - UIScrollViewDelegate
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scrollOffset = scrollView.contentOffset.y + scrollView.contentInset.top
@@ -72,6 +93,7 @@ class ShopDetailViewController: UIViewController, UIScrollViewDelegate {
             photo.frame.size.height = 200 - scrollOffset
         }
     }
+    
     
     // MARK: - アプリケーションロジック
     func updateFavoriteButton(){
@@ -93,7 +115,7 @@ class ShopDetailViewController: UIViewController, UIScrollViewDelegate {
         print("telTapped")
     }
     @IBAction func addressTapped(_ sender: UIButton) {
-        print("addressTapped")
+        performSegue(withIdentifier: "PushMapDetail", sender: nil)
     }
     @IBAction func favoriteTapped(_ sender: UIButton) {
         guard let gid = shop.gid else {

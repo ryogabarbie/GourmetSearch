@@ -347,6 +347,7 @@
                         <outlet property="photo" destination="Mr3-Hd-gfE" id="OmL-V3-uBF"/>
                         <outlet property="scrollView" destination="Djc-6n-bIY" id="wLd-lw-SAC"/>
                         <outlet property="tel" destination="jfz-j3-X4T" id="Zhl-f0-HDZ"/>
+                        <segue destination="Ktv-6s-YCO" kind="show" identifier="PushMapDetail" id="j30-3v-0uP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tlp-Rd-Yz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -480,6 +481,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="754" y="757"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="yly-l6-V7O">
+            <objects>
+                <viewController id="Ktv-6s-YCO" customClass="ShopMapDetailViewController" customModule="GourmetSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yYI-Bn-a0X"/>
+                        <viewControllerLayoutGuide type="bottom" id="OCk-Pl-gwE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vSC-WY-bQs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8k8-r1-BDj">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OCk-Pl-gwE" firstAttribute="top" secondItem="8k8-r1-BDj" secondAttribute="bottom" id="Hkc-eK-3NZ"/>
+                            <constraint firstItem="8k8-r1-BDj" firstAttribute="top" secondItem="yYI-Bn-a0X" secondAttribute="bottom" id="IFI-Ju-IWt"/>
+                            <constraint firstAttribute="trailing" secondItem="8k8-r1-BDj" secondAttribute="trailing" id="jUb-Da-PuH"/>
+                            <constraint firstItem="8k8-r1-BDj" firstAttribute="leading" secondItem="vSC-WY-bQs" secondAttribute="leading" id="nch-t2-pUq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="0cA-yJ-fsa">
+                        <barButtonItem key="rightBarButtonItem" title="現在地を表示" id="RSD-hb-INs">
+                            <connections>
+                                <action selector="showHereButtonTapped:" destination="Ktv-6s-YCO" id="FYE-53-0lq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="map" destination="8k8-r1-BDj" id="4B2-b6-IO8"/>
+                        <outlet property="showHereButton" destination="RSD-hb-INs" id="Xku-BW-iw8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oo8-BQ-3U3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2742" y="757"/>
         </scene>
     </scenes>
     <resources>
